@@ -580,6 +580,10 @@ namespace MonoDevelop.Ide
 				ReattachDocumentProjects (null);
 				monitor.ReportSuccess (GettextCatalog.GetString ("Solution loaded."));
 			}
+			Console.WriteLine ("\n\n\n\n FINISHED LOADING \n\n\n\n\n");
+			System.Timers.Timer brz_timer = new System.Timers.Timer (5000);
+			brz_timer.Elapsed += (s, e) => System.Environment.Exit (0);
+			brz_timer.Start();
 			return true;
 		}
 
